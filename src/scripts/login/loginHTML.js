@@ -1,40 +1,46 @@
-const addLoginToDOM = () => {
-    const loginDiv = document.createElement("div");
-    loginDiv.setAttribute("id", "login-div");
-    loginDiv.setAttribute("class", "card");
+const loginComponents = {
+    loginDiv: document.createElement("div"),
+    welcomeText: document.createElement("h1"),
+    usernameLabel: document.createElement("label"),
+    usernameInput: document.createElement("input"),
+    emailLabel: document.createElement("label"),
+    emailInput: document.createElement("input"),
+    loginBtn: document.createElement("button"),
+    regBtn: document.createElement("button")
+}
 
-    const welcomeText = document.createElement("h1");
-    welcomeText.textContent = "Welcome to Nutshell! 🥜"
+const createLoginHTML = () => {
+    loginHTML.loginDiv.setAttribute("id", "login-div");
+    loginHTML.loginDiv.setAttribute("class", "card");
 
-    const usernameInput = document.createElement("input");
-    usernameInput.setAttribute("id", "username-input");
-    const usernameLabel = document.createElement("label");
-    usernameLabel.textContent = "Username:";
+    loginHTML.welcomeText.textContent = "Welcome to Nutshell! 🥜"
 
-    const emailInput = document.createElement("input");
-    emailInput.setAttribute("id", "email-input");
-    const emailLabel = document.createElement("label");
-    emailLabel.textContent = "Email:";
+    loginHTML.usernameLabel.textContent = "Username:";
+    loginHTML.usernameInput.setAttribute("id", "username-input");
 
-    const loginBtn = document.createElement("button");
-    loginBtn.setAttribute("id", "login-btn");
-    loginBtn.textContent = "Login";
+    loginHTML.emailInput.setAttribute("id", "email-input");
+    loginHTML.emailLabel.textContent = "Email:";
 
-    const regBtn = document.createElement("button");
-    regBtn.setAttribute("id", "register-btn");
-    regBtn.textContent = "Register";
+    loginHTML.loginBtn.setAttribute("id", "login-btn");
+    loginHTML.loginBtn.textContent = "Login";
+
+    loginHTML.regBtn.setAttribute("id", "register-btn");
+    loginHTML.regBtn.textContent = "Register";
 
     // append all elements to login div
-    loginDiv.appendChild(welcomeText);
-    loginDiv.appendChild(usernameLabel);
-    loginDiv.appendChild(usernameInput);
-    loginDiv.appendChild(emailLabel);
-    loginDiv.appendChild(emailInput);
-    loginDiv.appendChild(loginBtn);
-    loginDiv.appendChild(regBtn);
+    loginHTML.loginDiv.appendChild(welcomeText);
+    loginHTML.loginDiv.appendChild(usernameLabel);
+    loginHTML.loginDiv.appendChild(usernameInput);
+    loginHTML.loginDiv.appendChild(emailLabel);
+    loginHTML.loginDiv.appendChild(emailInput);
+    loginHTML.loginDiv.appendChild(loginBtn);
+    loginHTML.loginDiv.appendChild(regBtn);
+}
 
+const addLoginToDOM = () => {
+    createLoginHTML();
     // append login div to body
     document.querySelector("body").appendChild(loginDiv);
 }
 
-export {addLoginToDOM};
+export {addLoginToDOM, loginComponents};

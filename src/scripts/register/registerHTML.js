@@ -1,40 +1,39 @@
-const addRegisterToDOM = () => {
-    const loginDiv = document.createElement("div");
-    loginDiv.setAttribute("id", "login-div");
-    loginDiv.setAttribute("class", "card");
-
-    const welcomeText = document.createElement("h1");
-    welcomeText.textContent = "Welcome to Nutshell! 🥜"
-
-    const usernameInput = document.createElement("input");
-    usernameInput.setAttribute("id", "username-input");
-    const usernameLabel = document.createElement("label");
-    usernameLabel.textContent = "Username:";
-
-    const emailInput = document.createElement("input");
-    emailInput.setAttribute("id", "email-input");
-    const emailLabel = document.createElement("label");
-    emailLabel.textContent = "Email:";
-
-    const loginBtn = document.createElement("button");
-    loginBtn.setAttribute("id", "login-btn");
-    loginBtn.textContent = "Login";
-
-    const regBtn = document.createElement("button");
-    regBtn.setAttribute("id", "register-btn");
-    regBtn.textContent = "Register";
-
-    // append all elements to login div
-    loginDiv.appendChild(welcomeText);
-    loginDiv.appendChild(usernameLabel);
-    loginDiv.appendChild(usernameInput);
-    loginDiv.appendChild(emailLabel);
-    loginDiv.appendChild(emailInput);
-    loginDiv.appendChild(loginBtn);
-    loginDiv.appendChild(regBtn);
-
-    // append login div to body
-    document.querySelector("body").appendChild(loginDiv);
+const regComponents = {
+    regDiv: document.createElement("div"),
+    welcomeText: document.createElement("h1"),
+    registerText: document.createElement("h3"),
+    usernameLabel: document.createElement("label"),
+    usernameInput: document.createElement("input"),
+    emailLabel: document.createElement("label"),
+    emailInput: document.createElement("input"),
+    regBtn: document.createElement("button")
 }
 
-export {addLoginToDOM};
+const createRegHTML = () => {
+    regComponents.regDiv.setAttribute("id", "reg-div");
+    regComponents.regDiv.setAttribute("class", "card");
+
+    regComponents.welcomeText.textContent = "Welcome to Nutshell! 🥜";
+    regComponents.registerText.textContent = "Please register below:";
+
+    regComponents.usernameInput.setAttribute("id", "username-input");
+    regComponents.usernameLabel.textContent = "Username:";
+
+    regComponents.emailInput.setAttribute("id", "email-input");
+    regComponents.emailLabel.textContent = "Email:";
+
+    regComponents.regBtn.setAttribute("id", "register-btn");
+    regComponents.regBtn.setAttribute("class", "btn btn-light");
+    regComponents.regBtn.textContent = "Register";
+
+    // append all elements to login div
+    regComponents.regDiv.appendChild(regComponents.welcomeText);
+    regComponents.regDiv.appendChild(regComponents.registerText);
+    regComponents.regDiv.appendChild(regComponents.usernameLabel);
+    regComponents.regDiv.appendChild(regComponents.usernameInput);
+    regComponents.regDiv.appendChild(regComponents.emailLabel);
+    regComponents.regDiv.appendChild(regComponents.emailInput);
+    regComponents.regDiv.appendChild(regComponents.regBtn);
+}
+
+export {createRegHTML, regComponents};

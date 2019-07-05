@@ -8,8 +8,8 @@ body {
     display: flex;
     justify-content: center;
 }
-#login-div {
-    background-color: slategray;
+#reg-div {
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,6 +18,9 @@ body {
     padding: 10px;
     margin: 10em;
     h1{
+        text-align: center;
+    }
+    h3{
         text-align: center;
     }
     #username-input{

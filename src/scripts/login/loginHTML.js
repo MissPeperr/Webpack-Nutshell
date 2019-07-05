@@ -1,40 +1,42 @@
-const addLoginToDOM = () => {
-    const loginDiv = document.createElement("div");
-    loginDiv.setAttribute("id", "login-div");
-    loginDiv.setAttribute("class", "card");
-
-    const welcomeText = document.createElement("h1");
-    welcomeText.textContent = "Welcome to Nutshell! 🥜"
-
-    const usernameInput = document.createElement("input");
-    usernameInput.setAttribute("id", "username-input");
-    const usernameLabel = document.createElement("label");
-    usernameLabel.textContent = "Username:";
-
-    const emailInput = document.createElement("input");
-    emailInput.setAttribute("id", "email-input");
-    const emailLabel = document.createElement("label");
-    emailLabel.textContent = "Email:";
-
-    const loginBtn = document.createElement("button");
-    loginBtn.setAttribute("id", "login-btn");
-    loginBtn.textContent = "Login";
-
-    const regBtn = document.createElement("button");
-    regBtn.setAttribute("id", "register-btn");
-    regBtn.textContent = "Register";
-
-    // append all elements to login div
-    loginDiv.appendChild(welcomeText);
-    loginDiv.appendChild(usernameLabel);
-    loginDiv.appendChild(usernameInput);
-    loginDiv.appendChild(emailLabel);
-    loginDiv.appendChild(emailInput);
-    loginDiv.appendChild(loginBtn);
-    loginDiv.appendChild(regBtn);
-
-    // append login div to body
-    document.querySelector("body").appendChild(loginDiv);
+const loginComponents = {
+    loginDiv: document.createElement("div"),
+    welcomeText: document.createElement("h1"),
+    usernameLabel: document.createElement("label"),
+    usernameInput: document.createElement("input"),
+    emailLabel: document.createElement("label"),
+    emailInput: document.createElement("input"),
+    loginBtn: document.createElement("button"),
+    regBtn: document.createElement("button")
 }
 
-export {addLoginToDOM};
+const createLoginHTML = () => {
+    loginComponents.loginDiv.setAttribute("id", "login-div");
+    loginComponents.loginDiv.setAttribute("class", "card");
+
+    loginComponents.welcomeText.textContent = "Welcome to Nutshell! 🥜"
+
+    loginComponents.usernameLabel.textContent = "Username:";
+    loginComponents.usernameInput.setAttribute("id", "username-input");
+
+    loginComponents.emailInput.setAttribute("id", "email-input");
+    loginComponents.emailLabel.textContent = "Email:";
+
+    loginComponents.loginBtn.setAttribute("id", "login-btn");
+    loginComponents.loginBtn.setAttribute("class", "btn btn-dark");
+    loginComponents.loginBtn.textContent = "Login";
+
+    loginComponents.regBtn.setAttribute("id", "register-btn");
+    loginComponents.regBtn.setAttribute("class", "btn btn-dark");
+    loginComponents.regBtn.textContent = "Register";
+
+    // append all elements to login div
+    loginComponents.loginDiv.appendChild(loginComponents.welcomeText);
+    loginComponents.loginDiv.appendChild(loginComponents.usernameLabel);
+    loginComponents.loginDiv.appendChild(loginComponents.usernameInput);
+    loginComponents.loginDiv.appendChild(loginComponents.emailLabel);
+    loginComponents.loginDiv.appendChild(loginComponents.emailInput);
+    loginComponents.loginDiv.appendChild(loginComponents.loginBtn);
+    loginComponents.loginDiv.appendChild(loginComponents.regBtn);
+}
+
+export {createLoginHTML, loginComponents};
